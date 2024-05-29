@@ -207,12 +207,12 @@ class Froggo(pygame.sprite.Sprite):
 
 
 #Game Over screen
-            if self.hp <= 0 or self.monster_count==51:
+            if self.hp <= 0 or self.monster_count==13:
                 surface = pygame.display.get_surface()
                 Loserect = pygame.Rect(0,0,surface.get_size()[0],surface.get_size()[1])
-                if self.hp <= 0 and self.monster_count != 51:
+                if self.hp <= 0 and self.monster_count != 13:
                     pygame.draw.rect(surface,'black',Loserect,500)
-                if self.hp >= 0 and self.monster_count == 51:
+                if self.hp >= 0 and self.monster_count == 13:
                     pygame.draw.rect(surface,'green',Loserect,500)
 
                 dead_surf = self.fontBig.render("Game Over",False,'white')
@@ -230,9 +230,9 @@ class Froggo(pygame.sprite.Sprite):
                 surface.blit(score_surf,(425,250))
                 surface.blit(restart_surface,(358,530))
                 surface.blit(save_surface,(320,620))
-                if self.hp <= 0 and self.monster_count != 51:
+                if self.hp <= 0 and self.monster_count != 13:
                     surface.blit(dead_surf,(370,90))
-                if self.hp >= 0 and self.monster_count == 51:
+                if self.hp >= 0 and self.monster_count == 13:
                     surface.blit(win_surf,(370,90))
 
 
